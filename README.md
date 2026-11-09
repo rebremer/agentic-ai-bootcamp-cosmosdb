@@ -1,6 +1,6 @@
 # Agentic AI bootcamp: build a bike store website with GitHub Copilot
 
-In this bootcamp you build **Summit & Spoke**, an outdoor and bike store website with an AI gear expert, in Visual Studio Code with GitHub Copilot (GHCP). You do not write the code yourself: you steer Copilot with two files.
+In this bootcamp you build **Summit & Spoke**, an outdoor and bike store website with an AI gear expert, in Visual Studio Code with GitHub Copilot (GHCP). You do not write the code yourself: you steer Copilot with two files. You can find an example of what you can create [here](bikeshop_website_example.png).
 
 | File | What it is |
 |---|---|
