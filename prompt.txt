@@ -12,7 +12,7 @@ GHCP, Connectivity:
 01. Read the constitution in folder .github. Discuss its main choices and trade-offs with me. Don't deploy anything yet.
 02. Prompt for the user account and the TAP key. In the remaining of the hackathon, these accounts will be used to authenticate to Azure and the APIM and Cosmos DB endpoints. Don't output other users in the chat.
 03. Check for connectivity to Cosmos DB account "hackrb-cosmos-rftbeem72jwhg" using db name of your user without prefix hack. List all containers in database.
-04. Check for connectivity to APIM endpoint https://hackrb-apim-rftbeem72jwhg.azure-api.net/openai that is load balancing the LLM by asking what is the capital of France using model "gpt-4.1-mini". The token audience is ec98da81-3e04-45b9-a4bc-e959f7649232.
+04. Check for connectivity to APIM endpoint https://hackrb-apim-rftbeem72jwhg.azure-api.net/openai that is load balancing the LLM by asking what is the capital of France using model "gpt-4.1-mini". The token audience is ec98da81-3e04-45b9-a4bc-e959f7649232. Always use this token when you connect to this APIM.
 
 GHCP, GUI:
 
@@ -22,7 +22,7 @@ GHCP, GUI:
 
 GHCP, product store:
 
-07. Vectorize the product file in products.sample.json and add this to products container in Cosmos DB. Use embeddingsmodel in APIM endpoint https://hackrb-apim-rftbeem72jwhg.azure-api.net/openai
+07. Vectorize the product file in products.sample.json and add this to products container in Cosmos DB. Use embeddingsmodel "text-embedding-3-small" in APIM endpoint https://hackrb-apim-rftbeem72jwhg.azure-api.net/openai
 08. Create an CosmosDBadmin.html that gives me an overview of the chats and products containers and how the are configured
 09. Connect index.hmtl GUI to vectorized Cosmos DB container such that I can ask questions
 10. Pimp the website. Make it look like a real outdoor and bike store.
