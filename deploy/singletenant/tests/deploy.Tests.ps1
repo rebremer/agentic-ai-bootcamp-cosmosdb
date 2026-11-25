@@ -29,6 +29,7 @@ function Assert-True {
 
 function Reset-Fixture {
     $state.Fixture = $baseline | ConvertFrom-Json -AsHashtable
+    $state.Fixture.parameters.participantCount.value = 3
     $state.UserLookups = [System.Collections.Generic.List[string]]::new()
     $state.DeploymentActions = [System.Collections.Generic.List[string]]::new()
     $state.CapturedParameters = $null
@@ -86,7 +87,7 @@ function Expect-Failure {
 }
 
 $tests = [ordered]@{
-    'Default creates exactly three mapped environments' = {
+    'Three participants create exactly three mapped environments' = {
         & "$root\deploy.ps1" -SubscriptionId $state.OrganizerId -Confirm:$false
         Assert-True ($state.UserLookups.Count -eq 3) 'Expected exactly three user lookups.'
         Assert-True ($state.UserLookups[0] -eq 'hackuser001@caldova03652943.onmicrosoft.com') 'Wrong first user.'

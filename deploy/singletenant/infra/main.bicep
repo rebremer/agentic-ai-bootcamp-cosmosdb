@@ -12,7 +12,7 @@ param isolationMode string = 'resourceGroup'
 @description('Number of participant environments, numbered 001 to 999.')
 @minValue(1)
 @maxValue(999)
-param participantCount int = 3
+param participantCount int = 100
 
 @description('Existing Entra user object IDs in participant order. Supply exactly participantCount distinct IDs; deploy.ps1 resolves hackuserNNN automatically.')
 param participantObjectIds string[]
@@ -20,10 +20,13 @@ param participantObjectIds string[]
 @description('In subscription mode, exactly participantCount distinct existing subscription IDs in participant order, all in this tenant. Empty in resourceGroup mode.')
 param participantSubscriptionIds string[] = []
 
-@description('Globally unique lowercase alphanumeric base name, starting with a letter. The Cosmos DB account, Foundry account and database are all named <namePrefix>-NNN (001-999).')
+@description('Lowercase alphanumeric base name, starting with a letter. The Cosmos DB account and Foundry account are named <namePrefix>-<random>-NNN, the database and resource group <namePrefix>-NNN (NNN = participant 001-999).')
 @minLength(3)
 @maxLength(12)
 param namePrefix string = 'cosmosbc'
+
+@description('Optional seed for the random name segment. The segment is deterministic per subscription, participant and seed; change the seed if a name is still reserved, e.g. by a soft-deleted Foundry account.')
+param nameSeed string = ''
 
 @description('Resource group and Cosmos DB region.')
 param location string = 'swedencentral'
@@ -62,13 +65,15 @@ param corsOrigins string[] = [
 @description('Additional resource tags. No tenant-policy exemptions are applied automatically.')
 param tags { *: string } = {}
 
-var participantNames = [for i in range(0, participantCount): '${namePrefix}-${padLeft(string(i + 1), 3, '0')}']
+var participantNumbers = [for i in range(0, participantCount): padLeft(string(i + 1), 3, '0')]
 
-module participants 'modules/participantSubscription.bicep' = [for (participantName, i) in participantNames: {
-  name: participantName
+module participants 'modules/participantSubscription.bicep' = [for (participantNumber, i) in participantNumbers: {
+  name: '${namePrefix}-${participantNumber}'
   scope: subscription(isolationMode == 'subscription' ? participantSubscriptionIds[i] : subscription().subscriptionId)
   params: {
-    participantName: participantName
+    namePrefix: namePrefix
+    participantNumber: participantNumber
+    nameSeed: nameSeed
     principalId: participantObjectIds[i]
     location: location
     aiLocation: aiLocation

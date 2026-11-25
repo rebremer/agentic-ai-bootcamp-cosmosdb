@@ -1,7 +1,7 @@
 using 'main.bicep'
 
 param isolationMode = 'resourceGroup'
-param participantCount = 3
+param participantCount = 100
 param namePrefix = 'cosmosbc'
 param nameSeed = ''
 param location = 'swedencentral'

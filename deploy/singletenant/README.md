@@ -37,7 +37,7 @@ No APIM, gateway app registration, new Entra users, new subscriptions, Foundry p
 | `resourceGroup` (default) | One resource group per participant in the organizer's existing subscription |
 | `subscription` | One resource group per participant in a **different existing subscription** per participant |
 
-`participantCount` defaults to **3** (range 1-999).
+`participantCount` defaults to **100** (range 1-999).
 Subscription mode requires exactly that many distinct subscription IDs in the organizer's tenant. It does **not** create billed subscriptions or grant subscription ownership.
 The deployment uses subscription-scoped Bicep modules, not billing APIs or management-group privileges.
 
@@ -75,10 +75,10 @@ az login --tenant caldova03652943.onmicrosoft.com
 .\deploy.ps1 -ValidateOnly
 .\deploy.ps1 -Preview
 
-# Three independent environments in the existing organizer subscription.
+# 100 independent environments (the default) in the existing organizer subscription.
 .\deploy.ps1
 
-# Six environments in that subscription.
+# Six environments in that subscription (override the default).
 .\deploy.ps1 -ParticipantCount 6
 
 # One existing subscription per participant, in participant order.
