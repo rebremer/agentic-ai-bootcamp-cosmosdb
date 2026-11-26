@@ -7,10 +7,10 @@ Discuss and agree on this constitution before building anything. It defines the 
 Build **Cosmos Copilot**, a simple chat app that:
 
 - answers questions about an outdoor and bike product catalog;
-- uses a Microsoft Foundry model that is exposed via AzureAPI Manager;
+- uses a Microsoft Foundry embeddings model and LLM model that is exposed via Foundry endpoints;
 - uses Azure Cosmos DB for chat history and product vector search;
 - supports follow-up questions with retrieval-augmented generation (RAG).
-- the solution shall be built locally in this a new chatapp folder. Nothing is deployed to Azure, this constitution lives in ./github/copilot-instructions.md
+- the solution shall be built locally in a new chatapp folder. Nothing is deployed to Azure, this constitution lives in ./.github/copilot-instructions.md
 
 ## 2. Keep it simple
 
@@ -77,7 +77,7 @@ A step is done when:
 Endpoints and audiences come from the prompts. Use the hackathon identity's Entra token only; no keys.
 
 - **Cosmos DB:** token with `az account get-access-token --resource https://cosmos.azure.com`. REST header: `Authorization: type=aad&ver=1.0&sig=<token>` (URL-encoded), plus `x-ms-version: 2018-12-31` and `x-ms-date`. The database name is the username without the `hack` prefix. Containers are pre-created; this identity can read and write data but cannot create containers.
-- **APIM (Azure OpenAI):** token with `az account get-access-token --resource <audience from the prompt>`, sent as `Authorization: Bearer <token>`. No subscription key. Call `POST <apim url>/deployments/<model>/chat/completions?api-version=2024-10-21`.
+- **Foundry (Azure OpenAI):** token with `az account get-access-token --resource https://cognitiveservices.azure.com`, sent as `Authorization: Bearer <token>`. No API key. Call `POST <foundry endpoint>/openai/deployments/<deployment>/chat/completions?api-version=2024-10-21`. For embeddings call `POST <foundry endpoint>/openai/deployments/<embeddings deployment>/embeddings?api-version=2024-10-21`. `<foundry endpoint>` is the bare host from the prompt, without a `/openai` suffix.
 - **On 401/403:** retry at most once, then stop and ask. Do not guess audiences, paths, or accounts.
 - **Output:** show only status codes and answers, never tokens. Run commands that may prompt or hang with a timeout.
 
