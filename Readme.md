@@ -53,10 +53,10 @@ Access is Entra only; there are no keys. RBAC can take a few minutes to propagat
 
 ## Solutions - Spoilerwarning
 
-* [Solution 1 - Connect to Cosmos DB and Foundry](walkthrough/challenge-01/solution-01.md)
-* [Solution 2 - Build the chat app](walkthrough/challenge-02/solution-02.md)
-* [Solution 3 - Build the product store with RAG](walkthrough/challenge-03/solution-03.md)
-* [Solution 4 - Make it look like a real store](walkthrough/challenge-04/solution-04.md)
+* [Solution 1 - Connect to Cosmos DB and Foundry](walkthrough/solution-01.md)
+* [Solution 2 - Build the chat app](walkthrough/solution-02.md)
+* [Solution 3 - Build the product store with RAG](walkthrough/solution-03.md)
+* [Solution 4 - Make it look like a real store](walkthrough/solution-04.md)
 
 ## Run it
 
