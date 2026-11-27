@@ -1,6 +1,6 @@
-# Challenge 4 - Make it look like a real store
+# Challenge 04: Make it look like a real store
 
-**[Home](../Readme.md)** - [Previous Challenge](challenge-03.md) - [Next Challenge](finish.md)
+**[Home](../Readme.md)** - [Previous Challenge](challenge-03.md)
 
 ## Goal
 

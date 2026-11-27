@@ -1,4 +1,4 @@
-# Walkthrough Challenge 1 - Connect to Cosmos DB and Foundry
+# Solution 01: Connect to Cosmos DB and Foundry
 
 **[Home](../Readme.md)** - [Next Challenge Solution](solution-02.md)
 

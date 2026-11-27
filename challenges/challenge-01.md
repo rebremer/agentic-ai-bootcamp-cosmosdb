@@ -1,4 +1,4 @@
-# Challenge 1 - Connect to Cosmos DB and Foundry
+# Challenge 01: Connect to Cosmos DB and Foundry
 
 **[Home](../Readme.md)** - [Next Challenge](challenge-02.md)
 

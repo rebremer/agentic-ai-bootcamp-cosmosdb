@@ -1,4 +1,4 @@
-# Challenge 2 - Build the chat app
+# Challenge 02: Build the chat app
 
 **[Home](../Readme.md)** - [Previous Challenge](challenge-01.md) - [Next Challenge](challenge-03.md)
 

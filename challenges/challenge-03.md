@@ -1,4 +1,4 @@
-# Challenge 3 - Build the product store with RAG
+# Challenge 03: Build the product store with RAG
 
 **[Home](../Readme.md)** - [Previous Challenge](challenge-02.md) - [Next Challenge](challenge-04.md)
 

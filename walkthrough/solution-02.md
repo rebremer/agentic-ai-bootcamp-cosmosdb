@@ -1,4 +1,4 @@
-# Walkthrough Challenge 2 - Build the chat app
+# Solution 02: Build the chat app
 
 **[Home](../Readme.md)** - [Previous Challenge Solution](solution-01.md) - [Next Challenge Solution](solution-03.md)
 

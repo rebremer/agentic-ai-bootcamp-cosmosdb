@@ -49,7 +49,6 @@ Access is Entra only; there are no keys. RBAC can take a few minutes to propagat
 * [Challenge 2 - Build the chat app](challenges/challenge-02.md)
 * [Challenge 3 - Build the product store with RAG](challenges/challenge-03.md)
 * [Challenge 4 - Make it look like a real store](challenges/challenge-04.md)
-* [Finish](challenges/finish.md)
 
 ## Solutions - Spoilerwarning
 

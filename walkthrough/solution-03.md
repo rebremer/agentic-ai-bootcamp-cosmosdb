@@ -1,4 +1,4 @@
-# Walkthrough Challenge 3 - Build the product store with RAG
+# Solution 03: Build the product store with RAG
 
 **[Home](../Readme.md)** - [Previous Challenge Solution](solution-02.md) - [Next Challenge Solution](solution-04.md)
 
