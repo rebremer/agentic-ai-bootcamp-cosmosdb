@@ -60,7 +60,7 @@ Access is Entra only; there are no keys. RBAC can take a few minutes to propagat
 ## Run it
 
 1. Open this folder in VS Code and open Copilot chat.
-2. Paste the prompts from `prompt.txt` one by one, checking each result before the next.
+2. Paste the prompts one by one (they are also listed in each [walkthrough](walkthrough/solution-01.md) step and in `prompt.txt`), checking each result before the next.
 3. Open `chatapp/index.html` with Live Server (right-click, **Open with Live Server**).
 
 ## Good to know

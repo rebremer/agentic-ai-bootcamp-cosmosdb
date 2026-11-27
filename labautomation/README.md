@@ -20,8 +20,8 @@ This folder is not participant download material.
 | Single-tenant project | labautomation |
 |---|---|
 | Subscription-scoped `main.bicep` loops over `participantCount` participants | Resource-group-scoped `main.bicep` for one participant; the platform does the fan-out |
-| Creates `<prefix>-NNN-rg` and `hackuserNNN` mapping | Resource group, Owner assignment and users come from the platform (`ResourceGroupName`, `AllowedEntraUserIds`) |
-| Participant Reader role on the resource group | Dropped; the platform already grants Owner on the resource group |
+| Creates `<prefix>-NNN-rg` and `hackuserNNN` mapping | Resource group and users come from the platform (`ResourceGroupName`, `AllowedEntraUserIds`); no Owner role is requested |
+| Participant Reader role on the resource group | Dropped; participants only get the data-plane roles from `main.bicep` |
 | `location` and `aiLocation` parameters | One `location` that follows the resource group; the platform picks the region from `PreferredLocation` and falls back on capacity errors |
 | Database `<prefix>-NNN` | Database `cosmosbc` (`databaseName`), published on the dashboard; the participant number no longer exists |
 | Operator output `environments` | `HackboxCredential` values on the participant dashboard |
@@ -59,8 +59,8 @@ Account names are `cosmosbc-<uniqueString(subscription, resource group, nameSeed
   `az cognitiveservices usage list --location <region> --subscription <id>`. Reserve 20 x the declared capacity per subscription and region.
 - Default Cosmos DB account (50) and Foundry account limits per region and subscription cap `labsPerSubscription`; 20 leaves headroom.
 - Dedicated accounts isolate data, not quota. Clients must handle `429`.
-- Because the platform grants participants **Owner** on their resource group, they can administer their own resources
-  (the single-tenant project only gave them data-plane access). Keys stay disabled in the template, but participants can change it.
+- `deploy-lab.ps1` does not pass `-RgOwnerEntraObjectIds` to `Invoke-MhhDeploymentWithRegionFallback`, so participants should only get the data-plane roles from `main.bicep`.
+  Verify after deployment that no Owner role exists on the resource group; if the platform still grants it, participants can re-enable keys.
 - Cosmos CORS defaults to Live Server origins (`http://localhost:5500`, `http://127.0.0.1:5500`); extend `corsOrigins` in `main.bicep` if needed.
 - Foundry soft-delete can reserve account names after teardown; change `nameSeed` if a name collides.
 - `estimatedDailyCostsUsd` (2.0) and `groups` (empty) are placeholders: tune the cost and add `GHCPUsers` if the platform should assign Copilot seats.

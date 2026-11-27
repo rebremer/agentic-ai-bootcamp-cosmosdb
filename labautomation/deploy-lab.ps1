@@ -116,7 +116,6 @@ if ($populated) {
     $result = Invoke-MhhDeploymentWithRegionFallback `
         -PreferredLocations $locations `
         -ResourceGroupName $effectiveResourceGroup `
-        -RgOwnerEntraObjectIds $userIds `
         -TemplateFile $template `
         -TemplateParameterObject $templateParameters `
         -DeploymentNamePrefix 'lab'

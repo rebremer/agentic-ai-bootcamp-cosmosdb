@@ -89,7 +89,7 @@ $base = @{
 Reset-State
 $output = Invoke-Lab $base
 Assert-True ($state.HelperCalls.Count -eq 1 -and $state.DeploymentCalls.Count -eq 0) 'Empty scope must use the region fallback helper.'
-Assert-True (($state.HelperCalls[0].Owners -join ',') -eq "$userA,$userB") 'Helper must receive every participant as RG owner.'
+Assert-True ($null -eq $state.HelperCalls[0].Owners) 'Helper must not be asked to grant participants RG owner.'
 Assert-True (($state.HelperCalls[0].Parameters.participantObjectIds -join ',') -eq "$userA,$userB") 'Template must receive every participant.'
 $names = @($output | ForEach-Object { $_.HackboxCredential.name })
 Assert-True ($names.Count -eq 9 -and 'CosmosEndpoint' -in $names -and 'FoundryEndpoint' -in $names) 'Expected the nine participant credentials.'

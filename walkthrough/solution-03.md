@@ -10,7 +10,11 @@ Please ensure that you successfully completed [challenge 2](../challenges/challe
 
 ### **Task 1: Vectorize the products**
 
-1. Paste prompt 08 from [prompt.txt](../prompt.txt). Copilot embeds every product in [products.sample.json](../products.sample.json) with `text-embedding-3-small` and writes it to the `products` container.
+1. Paste prompt 08. Copilot embeds every product in [products.sample.json](../products.sample.json) with `text-embedding-3-small` and writes it to the `products` container.
+
+```text
+Vectorize the product file in products.sample.json and add this to products container in Cosmos DB. Use embeddingsmodel "text-embedding-3-small" in Foundry endpoint <FOUNDRY_ENDPOINT from 00d>
+```
 
 💡 The container has a 1536-dimensional cosine vector index on `/embedding`, partition key `/category`. Copilot cannot create containers, so they were pre-created by the lab automation.
 
@@ -18,9 +22,17 @@ Please ensure that you successfully completed [challenge 2](../challenges/challe
 
 1. Paste prompt 09 and open `CosmosDBadmin.html` with Live Server. Check the configuration of `chats` and `products` and the stored items.
 
+```text
+Create a CosmosDBadmin.html that gives me an overview of the chats and products containers and how they are configured
+```
+
 ### **Task 3: Ask questions about the catalog**
 
 1. Paste prompt 10 and ask for a product, for example a warm jacket for cycling, then a follow-up about price or size.
+
+```text
+Connect index.html GUI to vectorized Cosmos DB container such that I can ask questions
+```
 
 🔑 **Key to RAG:** the question is embedded, the closest products are retrieved with a bounded vector query, and they are added to the LLM prompt.
 

@@ -64,7 +64,8 @@ var openAiUserRoleId = '5e0bd9bd-7b93-4f28-af87-19fc36ad61bd'
 
 // Globally unique, but stable per subscription and resource group so reruns update the same accounts.
 var accountName = '${namePrefix}-${uniqueString(subscription().subscriptionId, resourceGroup().name, nameSeed)}'
-var resourceTags = union(tags, { purpose: 'cosmosdb-bootcamp' })
+// SecurityControl=Ignore keeps the subscription's security automation from closing the Cosmos DB and Foundry firewalls.
+var resourceTags = union(tags, { purpose: 'cosmosdb-bootcamp', SecurityControl: 'Ignore' })
 
 resource cosmos 'Microsoft.DocumentDB/databaseAccounts@2024-11-15' = {
   name: accountName
