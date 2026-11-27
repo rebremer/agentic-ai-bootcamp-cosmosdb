@@ -5,5 +5,8 @@
   "labsPerSubscription": 20,
   "preferredLocation": "swedencentral",
   "estimatedDailyCostsUsd": 2.0,
-  "estimatedSharedDeploymentDailyCostsUsd": 0.0
+  "estimatedSharedDeploymentDailyCostsUsd": 0.0,
+  "contentPreparation": {
+    "studentZipExclusions": ["deploy", "labautomation", "walkthrough"]
+  }
 }
