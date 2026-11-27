@@ -12,7 +12,7 @@ Set up VS Code with GitHub Copilot, agree on the guardrails in the constitution 
 * Download `.github/copilot-instructions.md` from this repository into the folder `.github`.
 * Install the Live Server extension (`ritwickdey.LiveServer`).
 * Fill in the values from your lab dashboard (prompt 00d).
-* Paste prompts 01-04 from [prompt.txt](../prompt.txt) one by one: read the constitution, sign in, list the Cosmos DB containers and ask `gpt-4.1-mini` for the capital of France.
+* Paste prompts 01-04 from [prompt.txt](../resources/prompt.txt) one by one: read the constitution, sign in, list the Cosmos DB containers and ask `gpt-4.1-mini` for the capital of France.
 
 ## Success criteria
 

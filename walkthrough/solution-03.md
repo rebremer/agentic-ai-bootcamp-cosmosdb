@@ -10,7 +10,7 @@ Please ensure that you successfully completed [challenge 2](../challenges/challe
 
 ### **Task 1: Vectorize the products**
 
-1. Paste prompt 08. Copilot embeds every product in [products.sample.json](../products.sample.json) with `text-embedding-3-small` and writes it to the `products` container.
+1. Paste prompt 08. Copilot embeds every product in [products.sample.json](../resources/products.sample.json) with `text-embedding-3-small` and writes it to the `products` container.
 
 ```text
 Vectorize the product file in products.sample.json and add this to products container in Cosmos DB. Use embeddingsmodel "text-embedding-3-small" in Foundry endpoint <FOUNDRY_ENDPOINT from 00d>

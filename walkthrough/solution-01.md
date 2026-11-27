@@ -11,7 +11,7 @@ Please ensure that you verified the [general prerequisites](../Readme.md#prerequ
 ### **Task 1: Prepare VS Code**
 
 1. Create the folder `bootcamp-cosmosdb`, open it in VS Code and open Copilot chat.
-2. Add `.github/copilot-instructions.md` from this repository and install the Live Server extension (`code --install-extension ritwickdey.LiveServer`).
+2. Add `.github/copilot-instructions.md` from this repository and install the Live Server extension (`code --install-extension ritwickdey.LiveServer`). Unzip `download-Student.zip` and copy `resources/products.sample.json` into your folder; you need it in challenge 3.
 3. Paste prompt 00d and fill in `CosmosAccountName`, `CosmosDatabase` and `FoundryEndpoint` from your dashboard:
 
 ```text

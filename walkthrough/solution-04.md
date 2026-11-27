@@ -10,7 +10,7 @@ Please ensure that you successfully completed [challenge 3](../challenges/challe
 
 ### **Task 1: Restyle the site**
 
-1. Paste prompt 11. Compare the result with [the example](../bikeshop_website_example.png).
+1. Paste prompt 11. Compare the result with [the example](../resources/bikeshop_website_example.png).
 
 ```text
 Pimp the website. Make it look like a real outdoor and bike store.

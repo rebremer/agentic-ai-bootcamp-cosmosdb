@@ -64,7 +64,7 @@ Account names are `cosmosbc-<uniqueString(subscription, resource group, nameSeed
 - Cosmos CORS defaults to Live Server origins (`http://localhost:5500`, `http://127.0.0.1:5500`); extend `corsOrigins` in `main.bicep` if needed.
 - Foundry soft-delete can reserve account names after teardown; change `nameSeed` if a name collides.
 - `estimatedDailyCostsUsd` (2.0) and `groups` (empty) are placeholders: tune the cost and add `GHCPUsers` if the platform should assign Copilot seats.
-- The bootcamp [prompts](../prompt.txt) and [constitution](../.github/copilot-instructions.md) still describe `cosmosbc-<number>` names; point them at the dashboard values instead.
+- The bootcamp [prompts](../resources/prompt.txt) and [constitution](../.github/copilot-instructions.md) still describe `cosmosbc-<number>` names; point them at the dashboard values instead.
 
 ## Local validation
 

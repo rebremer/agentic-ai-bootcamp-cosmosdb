@@ -20,4 +20,4 @@ Turn the working chat into the **Summit & Spoke** outdoor and bike store website
 
 ## Learning resources
 
-* [bikeshop_website_example.png](../bikeshop_website_example.png)
+* [bikeshop_website_example.png](../resources/bikeshop_website_example.png)

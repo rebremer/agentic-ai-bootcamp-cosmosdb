@@ -1,11 +1,11 @@
 # Agentic AI bootcamp: build a bike store website with GitHub Copilot
 
-In this bootcamp you build **Summit & Spoke**, an outdoor and bike store website with an AI gear expert, in Visual Studio Code with GitHub Copilot (GHCP). You do not write the code yourself: you steer Copilot with two files. You can find an example of what you can create [here](bikeshop_website_example.png).
+In this bootcamp you build **Summit & Spoke**, an outdoor and bike store website with an AI gear expert, in Visual Studio Code with GitHub Copilot (GHCP). You do not write the code yourself: you steer Copilot with two files. You can find an example of what you can create [here](resources/bikeshop_website_example.png).
 
 | File | What it is |
 |---|---|
 | [`.github/copilot-instructions.md`](.github/copilot-instructions.md) | The **instructions** (the "constitution"). Copilot reads it automatically in every chat. It sets the guardrails: plain HTML, CSS and JavaScript, no backend, protect credentials, build one step at a time, and how to connect to Azure. |
-| [`prompt.txt`](prompt.txt) | The **prompts**. Numbered steps that you paste into Copilot chat one at a time, in order. |
+| [`resources/prompt.txt`](resources/prompt.txt) | The **prompts**. Numbered steps that you paste into Copilot chat one at a time, in order. |
 
 ## How it works
 
@@ -60,7 +60,7 @@ Access is Entra only; there are no keys. RBAC can take a few minutes to propagat
 ## Run it
 
 1. Open this folder in VS Code and open Copilot chat.
-2. Paste the prompts one by one (they are also listed in each [walkthrough](walkthrough/solution-01.md) step and in `prompt.txt`), checking each result before the next.
+2. Paste the prompts one by one (they are also listed in each [walkthrough](walkthrough/solution-01.md) step and in `resources/prompt.txt`), checking each result before the next.
 3. Open `chatapp/index.html` with Live Server (right-click, **Open with Live Server**).
 
 ## Good to know
