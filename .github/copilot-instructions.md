@@ -76,7 +76,7 @@ A step is done when:
 
 Endpoints and audiences come from the prompts. Use the hackathon identity's Entra token only; no keys.
 
-- **Cosmos DB:** token with `az account get-access-token --resource https://cosmos.azure.com`. REST header: `Authorization: type=aad&ver=1.0&sig=<token>` (URL-encoded), plus `x-ms-version: 2018-12-31` and `x-ms-date`. The database name is the username without the `hack` prefix. Containers are pre-created; this identity can read and write data but cannot create containers.
+- **Cosmos DB:** token with `az account get-access-token --resource https://cosmos.azure.com`. REST header: `Authorization: type=aad&ver=1.0&sig=<token>` (URL-encoded), plus `x-ms-version: 2018-12-31` and `x-ms-date`. The database name is the `CosmosDatabase` value from the lab dashboard, given in the prompts. Containers are pre-created; this identity can read and write data but cannot create containers.
 - **Foundry (Azure OpenAI):** token with `az account get-access-token --resource https://cognitiveservices.azure.com`, sent as `Authorization: Bearer <token>`. No API key. Call `POST <foundry endpoint>/openai/deployments/<deployment>/chat/completions?api-version=2024-10-21`. For embeddings call `POST <foundry endpoint>/openai/deployments/<embeddings deployment>/embeddings?api-version=2024-10-21`. `<foundry endpoint>` is the bare host from the prompt, without a `/openai` suffix.
 - **On 401/403:** retry at most once, then stop and ask. Do not guess audiences, paths, or accounts.
 - **Output:** show only status codes and answers, never tokens. Run commands that may prompt or hang with a timeout.

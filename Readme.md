@@ -18,7 +18,7 @@ In this bootcamp you build **Summit & Spoke**, an outdoor and bike store website
 The prompts take you from an empty folder to a working store:
 
 1. **Set up:** create the `chatapp` folder and install the Live Server extension in VS Code.
-2. **Connectivity:** sign in with your hackathon account and check access to Azure Cosmos DB and the model endpoint in Azure API Management.
+2. **Connectivity:** sign in with your hackathon account and check access to your Azure Cosmos DB account and Foundry model endpoint.
 3. **Chat:** a mock chat first, then connected to the real LLM, with the conversation history stored in Cosmos DB.
 4. **Product store:** vectorize the product file `products.sample.json` into Cosmos DB, and add `CosmosDBadmin.html` to inspect containers, chat history and embeddings.
 5. **RAG:** connect the chat to the vectorized products so you can ask questions about the catalog (retrieval-augmented generation).
@@ -29,6 +29,34 @@ The prompts take you from an empty folder to a working store:
 - Visual Studio Code with GitHub Copilot (agent mode).
 - The Live Server extension (`ritwickdey.LiveServer`).
 - The hackathon user account and Temporary Access Pass you receive from the organizers. Copilot asks for them in step 02.
+- The values on your lab dashboard (see below), which you fill in at step 00d.
+
+### Your environment
+
+The lab automation in [`labautomation/`](labautomation/README.md) deploys a dedicated Cosmos DB account and Foundry account (with `gpt-4.1-mini` and `text-embedding-3-small`) in your resource group. Your dashboard shows these values; none of them are secrets:
+
+| Dashboard value | Used for |
+|---|---|
+| `CosmosAccountName`, `CosmosEndpoint`, `CosmosDatabase` | Chat history and the product catalog (containers `chats`, `products`, `test`) |
+| `FoundryEndpoint` | Base URL of the model endpoint |
+| `ChatDeploymentName`, `EmbeddingDeploymentName`, `EmbeddingDimensions` | Chat model, embeddings model and vector size (1536) |
+
+Access is Entra only; there are no keys. RBAC can take a few minutes to propagate after deployment.
+
+## Challenges
+
+* [Challenge 1 - Connect to Cosmos DB and Foundry](challenges/challenge-01.md)  **<- Start here**
+* [Challenge 2 - Build the chat app](challenges/challenge-02.md)
+* [Challenge 3 - Build the product store with RAG](challenges/challenge-03.md)
+* [Challenge 4 - Make it look like a real store](challenges/challenge-04.md)
+* [Finish](challenges/finish.md)
+
+## Solutions - Spoilerwarning
+
+* [Solution 1 - Connect to Cosmos DB and Foundry](walkthrough/challenge-01/solution-01.md)
+* [Solution 2 - Build the chat app](walkthrough/challenge-02/solution-02.md)
+* [Solution 3 - Build the product store with RAG](walkthrough/challenge-03/solution-03.md)
+* [Solution 4 - Make it look like a real store](walkthrough/challenge-04/solution-04.md)
 
 ## Run it
 

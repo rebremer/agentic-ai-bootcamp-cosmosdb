@@ -6,14 +6,17 @@ GHCP, Init:
 
 00b. Create new folder .github and download constitution file folder from https://github.com/rebremer/agentic-ai-bootcamp-cosmosdb/.github/copilot-instructions.md
 00c. Install the extension "Live Server" (Ritwick Dey, ritwickdey.LiveServer) via the Extensions view, or run code --install-extension ritwickdey.LiveServer.
-00d. Fill in the account name prefix that you received for this bootcamp: ACCOUNT_NAME = "<<fill in account name prefix, e.g. cosmosbc-akxrmfe6rcnty>>". Your full account name is ACCOUNT_NAME-<number of your user>, e.g. cosmosbc-akxrmfe6rcnty-001. This full account name is used in all remaining steps.
+00d. Fill in the values from your lab dashboard. They are used in all remaining steps:
+COSMOS_ACCOUNT_NAME = "<<CosmosAccountName, e.g. cosmosbc-akxrmfe6rcnty>>"
+COSMOS_DATABASE = "<<CosmosDatabase, e.g. cosmosbc>>"
+FOUNDRY_ENDPOINT = "<<FoundryEndpoint, e.g. https://cosmosbc-akxrmfe6rcnty.services.ai.azure.com>>"
 
 GHCP, Connectivity:
 
 01. Read the constitution in folder .github. Discuss its main choices and trade-offs with me. Don't deploy anything yet.
 02. Prompt for the user account and the TAP key. In the remaining of the hackathon, these accounts will be used to authenticate to Azure and the Foundry and Cosmos DB endpoints. Don't output other users in the chat.
-03. Check for connectivity to Cosmos DB account "<full account name from 00d>" (endpoint https://<full account name from 00d>.documents.azure.com:443/) and db name "cosmosbc-<number of your user>". List all containers in database.
-04. Check for connectivity to Foundry endpoint https://<full account name from 00d>.services.ai.azure.com by asking what is the capital of France using model "gpt-4.1-mini". Use the Entra token with audience https://cognitiveservices.azure.com
+03. Check for connectivity to Cosmos DB account "<COSMOS_ACCOUNT_NAME from 00d>" (endpoint https://<COSMOS_ACCOUNT_NAME from 00d>.documents.azure.com:443/) and db name "<COSMOS_DATABASE from 00d>". List all containers in database.
+04. Check for connectivity to Foundry endpoint <FOUNDRY_ENDPOINT from 00d> by asking what is the capital of France using model "gpt-4.1-mini". Use the Entra token with audience https://cognitiveservices.azure.com
 
 GHCP, GUI:
 
@@ -23,7 +26,7 @@ GHCP, GUI:
 
 GHCP, product store:
 
-08. Vectorize the product file in products.sample.json and add this to products container in Cosmos DB. Use embeddingsmodel "text-embedding-3-small" in Foundry endpoint https://<full account name from 00d>.services.ai.azure.com
+08. Vectorize the product file in products.sample.json and add this to products container in Cosmos DB. Use embeddingsmodel "text-embedding-3-small" in Foundry endpoint <FOUNDRY_ENDPOINT from 00d>
 09. Create a CosmosDBadmin.html that gives me an overview of the chats and products containers and how they are configured
 10. Connect index.html GUI to vectorized Cosmos DB container such that I can ask questions
 11. Pimp the website. Make it look like a real outdoor and bike store.
